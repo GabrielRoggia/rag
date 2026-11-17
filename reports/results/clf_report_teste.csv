@@ -1,0 +1,11 @@
+,precision,recall,f1-score,support
+anpd_agentes,0.917,0.702,0.795,47.0
+anpd_encarregado,0.767,0.767,0.767,43.0
+anpd_seguranca,0.906,0.879,0.892,33.0
+cdc,0.948,0.965,0.957,57.0
+decreto_8771,0.889,0.615,0.727,13.0
+lgpd,0.8,1.0,0.889,32.0
+marco_civil,0.556,0.909,0.69,11.0
+accuracy,0.847,0.847,0.847,0.847
+macro avg,0.826,0.834,0.817,236.0
+weighted avg,0.861,0.847,0.847,236.0

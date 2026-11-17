@@ -1,0 +1,8 @@
+doc_id,unidades,palavras,media_palavras,mediana,maximo,janelas_clf,chunks_rag
+anpd_agentes,26,9006,346.4,433.0,683,159,63
+anpd_encarregado,42,9174,218.4,243.5,373,161,70
+anpd_seguranca,21,5293,252.0,285.0,399,95,38
+cdc,121,12236,101.1,67.0,487,240,135
+decreto_8771,41,4475,109.1,92.0,561,86,45
+lgpd,74,11961,161.6,104.5,940,223,105
+marco_civil,33,4031,122.2,95.0,363,77,41

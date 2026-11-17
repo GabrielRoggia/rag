@@ -1,0 +1,2 @@
+Recall@1,Recall@3,Recall@5,Recall@10,MRR@10,nDCG@10,ms/consulta,n
+0.565,0.804,0.848,0.913,0.695,0.632,20.226,46

@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LexDados · Assistente LGPD</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23f75500'/%3E%3Cg fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' transform='translate(4 4)'%3E%3Cpath d='m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z'/%3E%3Cpath d='m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z'/%3E%3Cpath d='M7 21h10'/%3E%3Cpath d='M12 3v18'/%3E%3Cpath d='M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2'/%3E%3C/g%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/assets/ds.css">
+  <link rel="stylesheet" href="/assets/app.css">
+  <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts@3.54.1/dist/apexcharts.min.js"></script>
+</head>
+<body class="dark">
+<div class="ek-app">
+  <div class="ek-side-slot"></div>
+  <aside class="ek-side" aria-label="Navegação">
+    <a class="ek-side-logo" href="#" data-ek-side-toggle aria-label="Expandir menu">
+      <span class="brand-mark"><i data-lucide="scale"></i></span>
+      <span class="brand-name">LexDados<small>Assistente LGPD</small></span>
+    </a>
+    <nav class="ek-side-list">
+      <a class="ek-side-item" href="#consulta" data-route="consulta"><span class="ek-side-icon"><i data-lucide="message-square-text"></i></span><span class="ek-side-label">Consulta</span></a>
+      <div class="ek-side-sep"></div>
+      <a class="ek-side-item" href="#painel" data-route="painel"><span class="ek-side-icon"><i data-lucide="gauge"></i></span><span class="ek-side-label">Painel</span></a>
+      <a class="ek-side-item" href="#avaliacao" data-route="avaliacao"><span class="ek-side-icon"><i data-lucide="chart-pie"></i></span><span class="ek-side-label">Avaliação</span></a>
+    </nav>
+    <a class="ek-side-version" href="/reports/relatorio.pdf" target="_blank" rel="noopener">v1.0 · relatório</a>
+  </aside>
+  <div class="ek-scrim"></div>
+
+  <div class="ek-main">
+    <div class="ek-mobilebar">
+      <button class="ek-btn ek-btn-icon" data-ek-side-toggle aria-label="Menu"><i data-lucide="menu"></i></button>
+      <span class="mobile-brand"><span class="brand-mark"><i data-lucide="scale"></i></span>LexDados</span>
+      <span style="width:36px"></span>
+    </div>
+
+    <header class="ek-topbar">
+      <div class="ek-page-island">
+        <span class="ek-page-island-icon"><i data-lucide="message-square-text"></i></span>
+        <div class="ek-page-island-text">
+          <div class="ek-page-title" id="page-title">Consulta</div>
+          <div class="ek-breadcrumb"><a href="#consulta">LexDados</a><i data-lucide="chevron-right"></i><a href="#" id="page-crumb">Perguntar à legislação</a></div>
+        </div>
+      </div>
+      <div class="ek-island">
+        <button class="ek-island-btn" data-ek-theme-toggle aria-label="Tema"></button>
+        <button class="ek-island-btn" data-tip="Tela cheia" aria-label="Tela cheia" onclick="document.documentElement.requestFullscreen?.()"><i data-lucide="maximize-2"></i></button>
+        <a class="ek-island-btn" data-tip="Relatório (PDF)" aria-label="Relatório" href="/reports/relatorio.pdf" target="_blank" rel="noopener"><i data-lucide="file-text"></i></a>
+      </div>
+    </header>
+
+    <main class="ek-content">
+
+      <!-- ============================== CONSULTA ============================== -->
+      <section class="page-section" data-page="consulta">
+        <div class="ek-grid">
+          <form class="ek-card span-12" id="ask-form">
+            <div class="ek-card-head">
+              <div>
+                <div class="ek-card-title">Sua pergunta</div>
+                <div class="ek-card-meta">LGPD, Marco Civil, Decreto 8.771, CDC e guias da ANPD. Os trechos vêm com o artigo ou a página.</div>
+              </div>
+              <button type="button" class="ek-btn ek-btn-sm" id="btn-new"><i data-lucide="rotate-ccw"></i>Nova consulta</button>
+            </div>
+            <div class="ask-row">
+              <textarea class="ek-input ask-input" id="q" rows="1" maxlength="1000" placeholder="Ex.: Em quanto tempo devo comunicar um incidente de segurança?" required></textarea>
+              <button class="ek-btn ek-btn-primary" type="submit" id="btn-ask"><i data-lucide="send"></i>Perguntar</button>
+            </div>
+            <div class="ask-opts">
+              <label class="opt">Trechos (k)
+                <select class="ek-select" id="k" style="width:auto;height:30px"><option>3</option><option selected>5</option><option>8</option><option>10</option></select>
+              </label>
+            </div>
+            <div class="ek-chips examples" id="examples"></div>
+          </form>
+
+          <div id="result-empty" class="ek-card span-12">
+            <div class="ek-empty"><i data-lucide="scale"></i>Nenhuma consulta ainda. Escreva uma pergunta ou escolha um exemplo.</div>
+          </div>
+
+          <div class="ek-card ek-stats span-12" id="r-stats" hidden>
+            <div class="ek-stat"><span><span class="ek-stat-label">Escopo</span><span class="ek-stat-value" id="s-scope">—</span></span><span class="ek-stat-icon"><i data-lucide="radar"></i></span></div>
+            <div class="ek-stat"><span><span class="ek-stat-label">Similaridade do melhor trecho</span><span class="ek-stat-value" id="s-sim">—</span></span><span class="ek-stat-icon"><i data-lucide="target"></i></span></div>
+            <div class="ek-stat"><span><span class="ek-stat-label">Tempo</span><span class="ek-stat-value" id="s-time">—</span></span><span class="ek-stat-icon"><i data-lucide="timer"></i></span></div>
+            <div class="ek-stat"><span><span class="ek-stat-label">Trechos</span><span class="ek-stat-value" id="s-k">—</span></span><span class="ek-stat-icon"><i data-lucide="layers"></i></span></div>
+          </div>
+
+          <div class="ek-card span-8" id="r-answer" hidden>
+            <div class="ek-card-head"><div>
+              <div class="ek-card-title">Resposta</div>
+              <div class="ek-card-meta" id="answer-meta">—</div>
+            </div></div>
+            <div class="answer" id="answer"></div>
+          </div>
+          <div class="ek-panel span-4" id="r-clf" hidden>
+            <div class="ek-panel-head"><span class="ek-panel-title">Classificador de fonte</span><span class="ek-tag" id="clf-tag">—</span></div>
+            <div class="ek-panel-body">
+              <div id="chart-clf-q" class="ek-chart" style="min-height:230px"></div>
+              <div class="ek-card-meta" style="margin-top:6px">Termos que mais pesaram (TF-IDF × coeficiente)</div>
+              <div class="terms" id="terms"></div>
+            </div>
+          </div>
+
+          <div class="ek-panel span-8" id="r-hits" hidden>
+            <div class="ek-panel-head"><span class="ek-panel-title">Trechos recuperados</span><span class="ek-count" id="hits-count">0</span></div>
+            <div class="ek-panel-body"><div class="hits" id="hits"></div></div>
+          </div>
+          <div class="ek-panel span-4" id="r-history" hidden>
+            <div class="ek-panel-head"><span class="ek-panel-title">Recentes</span><button type="button" class="ek-btn ek-btn-sm ek-btn-ghost" id="clear-history"><i data-lucide="eraser"></i>Limpar</button></div>
+            <div class="ek-panel-body" style="display:flex;flex-direction:column;gap:8px" id="history"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================== PAINEL ============================== -->
+      <section class="page-section" data-page="painel" hidden>
+        <div class="ek-grid">
+          <div class="ek-card ek-stats span-12">
+            <div class="ek-stat"><span><span class="ek-stat-label">Documentos</span><span class="ek-stat-value" id="o-docs">—</span></span><span class="ek-stat-icon"><i data-lucide="book-open"></i></span></div>
+            <div class="ek-stat"><span><span class="ek-stat-label">Trechos indexados</span><span class="ek-stat-value" id="o-chunks">—</span></span><span class="ek-stat-icon"><i data-lucide="layers"></i></span></div>
+            <a class="ek-stat" href="#avaliacao"><span><span class="ek-stat-label">Perguntas anotadas</span><span class="ek-stat-value" id="o-qa">—</span></span><span class="ek-stat-icon"><i data-lucide="list-checks"></i></span></a>
+            <a class="ek-stat" href="#avaliacao"><span><span class="ek-stat-label">F1-macro do classificador</span><span class="ek-stat-value" id="o-f1">—</span></span><span class="ek-stat-icon"><i data-lucide="split"></i></span></a>
+          </div>
+
+          <div class="ek-card span-8">
+            <div class="ek-card-head">
+              <div><div class="ek-card-title">Recuperação no gold set</div>
+                <div class="ek-card-meta">Fração das perguntas com um trecho relevante entre os k primeiros · <a class="ek-card-link" href="#avaliacao">Ver por pergunta</a></div></div>
+              <div style="display:flex;gap:24px">
+                <div class="ek-readout"><span class="ek-readout-label">MRR@10</span><span class="ek-readout-value" id="o-mrr">—</span></div>
+                <div class="ek-readout"><span class="ek-readout-label">Recall@5</span><span class="ek-readout-value" id="o-r5">—</span></div>
+              </div>
+            </div>
+            <div id="chart-retrieval" class="ek-chart" style="min-height:280px"></div>
+          </div>
+          <div class="ek-panel span-4">
+            <div class="ek-panel-head"><span class="ek-panel-title">Trechos por documento</span></div>
+            <div class="ek-panel-body"><div id="chart-docs" class="ek-chart" style="min-height:300px"></div></div>
+          </div>
+
+          <div class="ek-panel span-6">
+            <div class="ek-panel-head"><span class="ek-panel-title">Classificadores · F1-macro</span><span class="ek-tag is-ok" id="o-clf-tag">—</span></div>
+            <div class="ek-panel-body"><div id="chart-clf" class="ek-chart"></div></div>
+          </div>
+          <div class="ek-panel span-6">
+            <div class="ek-panel-head"><span class="ek-panel-title">Detector de fora de escopo</span><span class="ek-tag is-ok" id="o-auc">—</span></div>
+            <div class="ek-panel-body">
+              <div class="ek-card-meta" style="margin-bottom:10px">Similaridade de cosseno do melhor trecho; limiar pelo índice de Youden na curva ROC.</div>
+              <div class="kv" id="scope-kv"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================== AVALIAÇÃO ============================== -->
+      <section class="page-section" data-page="avaliacao" hidden>
+        <div class="ek-page-head">
+          <ul class="ek-tabs" data-ek-tabs>
+            <li><button class="ek-tab is-active" data-ek-tab="ev-q">Recuperação</button></li>
+            <li><button class="ek-tab" data-ek-tab="ev-c">Classificador</button></li>
+          </ul>
+        </div>
+        <div data-ek-panel="ev-q">
+          <div class="ek-table-tools">
+            <select class="ek-select" id="ev-filter" style="width:220px"><option value="">Todos os resultados</option><option value="miss">Erros (fora do top-5)</option><option value="hit">Acertos (no top-5)</option></select>
+            <label class="ek-search"><i data-lucide="search"></i><input class="ek-input" id="ev-search" placeholder="Buscar..."></label>
+          </div>
+          <div class="ek-table-wrap">
+            <table class="ek-table">
+              <thead><tr><th>ID</th><th>Pergunta</th><th>Documento esperado</th><th>Alvo</th><th>Top-5</th><th style="text-align:right">1º relevante</th><th style="text-align:right">RR</th></tr></thead>
+              <tbody id="ev-body"></tbody>
+            </table>
+            <span class="ek-table-count" id="ev-count"></span>
+          </div>
+          <div class="ek-card-meta section-gap">Clique em uma pergunta para executá-la na Consulta. "1º relevante" é a posição do primeiro trecho correto (até 10).</div>
+        </div>
+        <div data-ek-panel="ev-c" hidden>
+          <div class="ek-table-wrap">
+            <table class="ek-table">
+              <thead><tr><th>Classe (documento)</th><th>Precisão</th><th>Revocação</th><th>F1</th><th style="text-align:right">Amostras no teste</th></tr></thead>
+              <tbody id="clf-body"></tbody>
+            </table>
+            <span class="ek-table-count" id="clf-count"></span>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="ek-footer">LexDados · Trabalho 1 de Inteligência Artificial II · Ferramenta informativa, não substitui orientação jurídica.</footer>
+  </div>
+</div>
+
+<script src="/assets/ds.js"></script>
+<script src="/assets/app.js"></script>
+</body>
+</html>

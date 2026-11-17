@@ -1,0 +1,5 @@
+modelo,melhores_params,f1_macro_cv,acc_treino,acc_teste,f1_macro_treino,f1_macro_teste
+Baseline (classe majoritária),-,,0.2373,0.1356,0.0548,0.0341
+ComplementNB,"{""clf__alpha"": 0.3, ""tfidf__ngram_range"": [1, 2]}",0.783,0.9714,0.839,0.9718,0.8073
+LogisticRegression,"{""clf__C"": 1, ""tfidf__ngram_range"": [1, 1]}",0.7886,0.9714,0.8475,0.9712,0.8168
+LinearSVC,"{""clf__C"": 1.0, ""tfidf__ngram_range"": [1, 2]}",0.7885,0.9988,0.8686,0.999,0.8456

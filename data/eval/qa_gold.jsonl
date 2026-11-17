@@ -1,0 +1,46 @@
+{"id": "q01", "question": "O que a LGPD considera dado pessoal sensível?", "doc_id": "lgpd", "articles": ["5"]}
+{"id": "q02", "question": "Quais princípios devem ser observados no tratamento de dados pessoais?", "doc_id": "lgpd", "articles": ["6"]}
+{"id": "q03", "question": "Em quais hipóteses uma empresa pode tratar dados pessoais? Quais são as bases legais?", "doc_id": "lgpd", "articles": ["7"]}
+{"id": "q04", "question": "Como o consentimento do titular deve ser obtido e ele pode ser revogado?", "doc_id": "lgpd", "articles": ["8"]}
+{"id": "q05", "question": "Quando o legítimo interesse do controlador pode justificar o uso de dados?", "doc_id": "lgpd", "articles": ["10"]}
+{"id": "q06", "question": "Em que situações é permitido tratar dados de saúde, biométricos ou de origem racial?", "doc_id": "lgpd", "articles": ["11"]}
+{"id": "q07", "question": "Dados anonimizados continuam sendo protegidos pela lei?", "doc_id": "lgpd", "articles": ["12"]}
+{"id": "q08", "question": "Quais cuidados são exigidos para coletar dados de crianças?", "doc_id": "lgpd", "articles": ["14"]}
+{"id": "q09", "question": "Depois que o tratamento termina, a empresa pode guardar os dados?", "doc_id": "lgpd", "articles": ["16"]}
+{"id": "q10", "question": "Quais direitos o titular pode exigir do controlador, como correção e portabilidade?", "doc_id": "lgpd", "articles": ["18"]}
+{"id": "q11", "question": "Qual o prazo para o controlador fornecer a declaração completa de acesso aos dados?", "doc_id": "lgpd", "articles": ["19"]}
+{"id": "q12", "question": "Posso pedir revisão de uma decisão tomada só por algoritmo, como uma análise de crédito automatizada?", "doc_id": "lgpd", "articles": ["20"]}
+{"id": "q13", "question": "Em quais casos dados pessoais podem ser enviados para outro país?", "doc_id": "lgpd", "articles": ["33"]}
+{"id": "q14", "question": "Quando a autoridade nacional pode exigir um relatório de impacto à proteção de dados?", "doc_id": "lgpd", "articles": ["38"]}
+{"id": "q15", "question": "A identidade e o contato do encarregado precisam ser divulgados?", "doc_id": "lgpd", "articles": ["41"]}
+{"id": "q16", "question": "Quais medidas de segurança os agentes de tratamento devem adotar para proteger os dados?", "doc_id": "lgpd", "articles": ["46"]}
+{"id": "q17", "question": "A empresa sofreu um vazamento de dados. Ela precisa avisar a ANPD e os titulares?", "doc_id": "lgpd", "articles": ["48"]}
+{"id": "q18", "question": "Quais são as sanções e o valor máximo da multa por descumprir a LGPD?", "doc_id": "lgpd", "articles": ["52"]}
+{"id": "q19", "question": "A LGPD se aplica a uma empresa estrangeira que oferece serviços a pessoas no Brasil?", "doc_id": "lgpd", "articles": ["3"]}
+{"id": "q20", "question": "Tratamento de dados para fins jornalísticos ou de segurança pública está sujeito à LGPD?", "doc_id": "lgpd", "articles": ["4"]}
+{"id": "q21", "question": "Quais são as competências da Autoridade Nacional de Proteção de Dados?", "doc_id": "lgpd", "articles": ["55-J"]}
+{"id": "q22", "question": "Quem responde pelos danos causados ao titular por violação da legislação de proteção de dados?", "doc_id": "lgpd", "articles": ["42"]}
+{"id": "q23", "question": "Quais são os fundamentos da disciplina de proteção de dados, como a autodeterminação informativa?", "doc_id": "lgpd", "articles": ["2"]}
+{"id": "q24", "question": "Por quanto tempo o provedor de conexão deve guardar os registros de conexão?", "doc_id": "marco_civil", "articles": ["13"]}
+{"id": "q25", "question": "Por quanto tempo um aplicativo deve manter os registros de acesso dos usuários?", "doc_id": "marco_civil", "articles": ["15"]}
+{"id": "q26", "question": "O que é a neutralidade de rede e quem deve tratar os pacotes de dados de forma isonômica?", "doc_id": "marco_civil", "articles": ["9"]}
+{"id": "q27", "question": "Uma rede social responde por conteúdo publicado por terceiros mesmo sem ordem judicial?", "doc_id": "marco_civil", "articles": ["19"]}
+{"id": "q28", "question": "O que acontece se um site não remover fotos íntimas divulgadas sem autorização após notificação da vítima?", "doc_id": "marco_civil", "articles": ["21"]}
+{"id": "q29", "question": "Quais direitos o usuário de internet tem quanto à inviolabilidade da vida privada e ao não fornecimento de seus dados a terceiros?", "doc_id": "marco_civil", "articles": ["7"]}
+{"id": "q30", "question": "Quais diretrizes de padrão de segurança os provedores devem seguir na guarda de dados pessoais e comunicações privadas?", "doc_id": "decreto_8771", "articles": ["13"]}
+{"id": "q31", "question": "Como o decreto que regulamenta o Marco Civil define dado pessoal e tratamento de dados?", "doc_id": "decreto_8771", "articles": ["14"]}
+{"id": "q32", "question": "Em quais situações excepcionais é admitida a discriminação ou degradação do tráfego na internet?", "doc_id": "decreto_8771", "articles": ["4", "5"]}
+{"id": "q33", "question": "O consumidor tem direito de acessar as informações guardadas sobre ele em cadastros e bancos de dados?", "doc_id": "cdc", "articles": ["43"]}
+{"id": "q34", "question": "Qual o prazo para desistir de uma compra feita pela internet?", "doc_id": "cdc", "articles": ["49"]}
+{"id": "q35", "question": "Quais são os direitos básicos do consumidor?", "doc_id": "cdc", "articles": ["6"]}
+{"id": "q36", "question": "O que caracteriza publicidade enganosa ou abusiva?", "doc_id": "cdc", "articles": ["37"]}
+{"id": "q37", "question": "Quando duas organizações devem ser consideradas controladoras conjuntas de um tratamento?", "doc_id": "anpd_agentes", "keywords": ["controladoria conjunta"]}
+{"id": "q38", "question": "O que é um suboperador e qual sua relação com o operador?", "doc_id": "anpd_agentes", "keywords": ["suboperador"]}
+{"id": "q39", "question": "Um funcionário ou servidor público subordinado pode ser considerado controlador?", "doc_id": "anpd_agentes", "keywords": ["subordinad"]}
+{"id": "q40", "question": "Quais cuidados uma pequena empresa deve ter com cópias de segurança dos dados?", "doc_id": "anpd_seguranca", "keywords": ["backups"]}
+{"id": "q41", "question": "Que boas práticas de senhas e controle de acesso a ANPD recomenda para agentes de pequeno porte?", "doc_id": "anpd_seguranca", "keywords": ["senha"]}
+{"id": "q42", "question": "Por que conscientizar e treinar os funcionários sobre segurança da informação?", "doc_id": "anpd_seguranca", "keywords": ["conscientiza"]}
+{"id": "q43", "question": "O encarregado pode ter conflito de interesse com outras funções na empresa?", "doc_id": "anpd_encarregado", "keywords": ["conflito de interesse"]}
+{"id": "q44", "question": "O encarregado precisa ser um funcionário ou pode ser uma pessoa jurídica contratada?", "doc_id": "anpd_encarregado", "keywords": ["pessoa jurídica", "encarregado"]}
+{"id": "q45", "question": "O que fazer quando o encarregado sai de férias ou fica afastado?", "doc_id": "anpd_encarregado", "keywords": ["substituto"]}
+{"id": "q46", "question": "Quais qualificações profissionais são esperadas do encarregado de dados?", "doc_id": "anpd_encarregado", "keywords": ["qualificaç"]}

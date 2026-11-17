@@ -1,0 +1,9 @@
+,valor
+unidades,358
+chunks_rag,497
+janelas_classificador,1041
+textos_vazios_unidades,0
+duplicados_exatos_unidades,0
+duplicados_exatos_janelas,0
+paginas_pdf_quase_vazias(<30 palavras),9
+outliers_tamanho_unidade(IQR),6

@@ -1,0 +1,86 @@
+/* Extensões do projeto sobre ds.css: marca própria e componentes do assistente. Só usa tokens. */
+
+/* Marca (sem logotipo de terceiros): símbolo Lucide em quadrado com gradiente + nome */
+.brand-mark {
+  position: absolute; top: 50%; left: 14px; transform: translateY(-50%);
+  width: 44px; height: 44px; border-radius: 14px; display: grid; place-items: center; color: #fff;
+  background: linear-gradient(135deg, var(--brand-bright), var(--accent));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .25), 0 6px 16px color-mix(in srgb, var(--accent) 35%, transparent);
+}
+.brand-mark svg { width: 22px; height: 22px; }
+.brand-name {
+  position: absolute; top: 50%; left: 70px; transform: translateY(-50%); white-space: nowrap;
+  color: #fff; font: 700 18px/1 Poppins, sans-serif; letter-spacing: -.2px; opacity: 0;
+  transition: opacity .45s var(--ease-out);
+}
+.brand-name small { display: block; margin-top: 4px; font: 500 10px/1 var(--font-ui); color: #9aa0ab; letter-spacing: .6px; text-transform: uppercase; }
+.ek-side.is-expanded .brand-name { opacity: 1; }
+.mobile-brand { display: flex; align-items: center; gap: 8px; font: 700 16px/1 Poppins, sans-serif; color: #fff; }
+.mobile-brand .brand-mark { position: static; transform: none; width: 32px; height: 32px; border-radius: 10px; }
+.mobile-brand .brand-mark svg { width: 17px; height: 17px; }
+@media (max-width: 900px) { .ek-side .brand-name { opacity: 1; } }
+
+/* Formulário da pergunta */
+.ask-row { display: flex; gap: 10px; align-items: flex-start; }
+.ask-row .ek-input { flex: 1 1; min-width: 0; }
+.ask-input { height: auto !important; min-height: 44px; padding-top: 11px !important; padding-bottom: 11px !important; resize: vertical; font-family: Poppins, sans-serif; font-size: 13px; line-height: 1.5; }
+.ask-row .ek-btn-primary { height: 44px; }
+.ask-opts { display: flex; flex-wrap: wrap; gap: 14px 22px; align-items: center; margin-top: 12px; }
+.opt { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--text-2); }
+.examples { margin-top: 12px; }
+.examples .ek-chip { height: auto; min-height: 28px; padding-top: 5px; padding-bottom: 5px; line-height: 1.35; text-align: left; }
+@media (max-width: 760px) {
+  .ask-row { flex-direction: column; }
+  .ask-row .ek-btn-primary { width: 100%; justify-content: center; }
+  .examples .ek-chip { border-radius: 12px; justify-content: flex-start; }
+}
+
+/* Resposta */
+.answer { font-size: 13px; line-height: 1.7; color: var(--text-1); }
+.answer p { margin: 0 0 10px; }
+.answer p:last-child { margin-bottom: 0; }
+.cite {
+  display: inline-grid; place-items: center; min-width: 20px; height: 18px; padding: 0 5px; margin: 0 1px;
+  border-radius: 999px; background: var(--accent-tint); color: var(--accent-text); font-size: 10.5px; font-weight: 700;
+  vertical-align: 1px; cursor: pointer; border: 0; font-variant-numeric: tabular-nums;
+}
+.cite:hover { background: var(--accent); color: #fff; }
+
+/* Trechos */
+.hits { display: flex; flex-direction: column; gap: 10px; }
+.hit { display: block; text-align: left; width: 100%; }
+.hit.is-flash { box-shadow: 0 0 0 2px var(--accent); }
+.hit-top { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.hit-rank { flex: none; width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; background: var(--accent-tint); color: var(--accent-text); font-size: 12px; font-weight: 700; }
+.hit-ref { flex: 1 1; min-width: 0; font-size: 13px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.hit-score { flex: none; display: flex; align-items: center; gap: 8px; font-size: 11px; color: var(--text-3); font-variant-numeric: tabular-nums; }
+.bar { width: 70px; height: 6px; border-radius: 999px; background: var(--line); overflow: hidden; }
+.bar > span { display: block; height: 100%; border-radius: inherit; background: var(--accent); }
+.hit-text { margin-top: 10px; font-size: 12.5px; line-height: 1.65; color: var(--text-2); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.hit.is-open .hit-text { -webkit-line-clamp: unset; display: block; }
+.hit mark { background: color-mix(in srgb, var(--accent) 22%, transparent); color: inherit; border-radius: 3px; padding: 0 1px; }
+@media (max-width: 760px) { .bar { display: none; } }
+
+#clf-tag { display: inline-block; max-width: 60%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; line-height: 22px; }
+
+/* Termos do classificador */
+.terms { display: flex; flex-direction: column; gap: 6px; margin-top: 8px; }
+.term { display: grid; grid-template-columns: 96px 1fr 52px; gap: 10px; align-items: center; font-size: 12px; }
+.term-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.term-val { text-align: right; color: var(--text-3); font-variant-numeric: tabular-nums; }
+.term .bar { width: 100%; }
+.term .bar.is-neg > span { background: var(--danger); }
+
+/* Diversos */
+.muted { color: var(--text-3); }
+.section-gap { margin-top: 16px; }
+.kv { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; }
+.hist-item { display: block; width: 100%; text-align: left; font-size: 12.5px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ok-ico { color: var(--success-text); } .bad-ico { color: var(--danger-text); }
+.ok-ico svg, .bad-ico svg { width: 16px; height: 16px; }
+.clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+[hidden] { display: none !important; }
+tr.is-click { cursor: pointer; }
+.spin { animation: spin 0.9s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .spin { animation: none; } }
