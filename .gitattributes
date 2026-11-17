@@ -1,0 +1,17 @@
+# Arquivos binários: nunca converter fins de linha (o PDF corromperia no checkout com autocrlf)
+*.pdf     binary
+*.png     binary
+*.joblib  binary
+*.npy     binary
+
+# Texto com LF no repositório
+*.py      text eol=lf
+*.sh      text eol=lf
+*.md      text
+*.csv     text
+*.json    text
+*.jsonl   text
+*.html    text
+*.css     text
+*.js      text
+*.txt     text
